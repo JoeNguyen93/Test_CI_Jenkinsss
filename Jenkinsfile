@@ -8,6 +8,9 @@ pipeline {
 
   stages {
     stage('Test') {
+      when {
+        changeRequest target: 'master'
+      }
       steps {
         echo 'Test Stage'
         echo "${env.BRANCH_NAME}"
@@ -15,6 +18,9 @@ pipeline {
     }
 
     stage('Deploy') {
+      when {
+        branch 'master'
+      }
       steps {
         echo 'Deploy stage'
         echo "${env.BRANCH_NAME}"
