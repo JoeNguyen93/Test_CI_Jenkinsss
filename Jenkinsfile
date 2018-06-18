@@ -6,6 +6,10 @@ pipeline {
     }
   }
 
+  environment {
+    GH_ACCESS_TOKEN = credentials('joenguyen93-gh-token')
+  }
+
   stages {
     stage('Test') {
       when {
@@ -13,7 +17,10 @@ pipeline {
       }
       steps {
         echo 'Test Stage'
-        echo "${env.BRANCH_NAME}"
+        echo "Branch name: ${env.BRANCH_NAME}"
+        echo "Change id: ${env.CHANGE_ID}"
+        echo "Pull request: ${env.PULL_REQUEST}"
+        echo "Token: ${env.GH_ACCESS_TOKEN}"
       }
     }
 
