@@ -6,14 +6,22 @@ pipeline {
     }
   }
 
+  environment {
+    GH_ACCESS_TOKEN = credentials('joenguyen93-gh-token')
+  }
+
   stages {
     stage('Test') {
       when {
         changeRequest target: 'master'
       }
       steps {
-        echo 'Test Stage'
-        echo "${env.BRANCH_NAME}"
+        // echo 'Test Stage'
+        // echo "Branch name: ${env.BRANCH_NAME}"
+        // echo "Change id: ${env.CHANGE_ID}"
+        // echo "Pull request: ${env.PULL_REQUEST}"
+        // echo "Token: ${env.GH_ACCESS_TOKEN}"
+        sh "make keke ${env.CHANGE_ID} ${env.GH_ACCESS_TOKEN}"
       }
     }
 

@@ -1,0 +1,19 @@
+{
+  "name": "Test_CI_Jenkinsss",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hehe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github-softagram:JoeNguyen93/Test_CI_Jenkinsss.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
